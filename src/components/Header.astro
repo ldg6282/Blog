@@ -5,7 +5,12 @@ import { SITE_TITLE } from '../consts';
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<h2>
+			<a href="/" class="title-with-icon">
+				<img src="/favicon.svg" alt="Site Icon" width="24" height="24" />
+				{SITE_TITLE}
+			</a>
+		</h2>
 		<div class="social-links">
 			<a href="https://github.com/ldg6282" target="_blank">
 				<span class="sr-only">Go to Astro's GitHub repo</span>
@@ -19,6 +24,7 @@ import { SITE_TITLE } from '../consts';
 		</div>
 	</nav>
 </header>
+
 <style>
 	header {
 		margin: 0;
@@ -58,5 +64,14 @@ import { SITE_TITLE } from '../consts';
 		.social-links {
 			display: none;
 		}
+	}
+	.title-with-icon {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+	}
+	.title-with-icon img {
+		width: 24px;
+		height: 24px;
 	}
 </style>
