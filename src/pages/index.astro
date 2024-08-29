@@ -1,0 +1,41 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Card from '../components/Card.jsx';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			.card-container {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 20px;
+				justify-content: center;
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h5>posting</h5>
+			<div class="card-container">
+				{posts.map((post) => (
+					<Card
+						title={post.data.title}
+						description={post.data.description}
+						link={`/blog/${post.slug}`}
+						pubDate={post.data.pubDate}
+						client:load
+					/>
+				))}
+			</div>
+		</main>
+	</body>
+</html>
