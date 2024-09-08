@@ -15,7 +15,7 @@ React에서 사용자 입력을 처리하는 방식은 제어 컴포넌트와 �
 
 <div align="center">
 <제어 컴포넌트 예시>
-<img src="https://postfiles.pstatic.net/MjAyNDA5MDdfMTE3/MDAxNzI1NzEyMDYzNTQ5.93taWyLNUiKfdVujP3CGHavfFqOMqXksA1jjqvvbWkkg.rylUL-JhAKgZjNp5954AOh0yPwY7X24J7bYi7w13SKkg.GIF/%EC%A0%9C%EC%96%B4_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8.gif?type=w3840" width="600px">
+<img src="/제어 컴포넌트.gif" width="600px">
 </div>
 
 - **상태와 동기화**
@@ -40,7 +40,7 @@ React에서 사용자 입력을 처리하는 방식은 제어 컴포넌트와 �
 
 <div align="center">
 <비제어 컴포넌트 예시>
-<img src="https://postfiles.pstatic.net/MjAyNDA5MDdfMTg1/MDAxNzI1NzEyMDYzNTU3.VhZGED1MzWJ0tn3uyvcnVjeSgClg9YQfOw92sD2buAYg.yW0BivFo8X2DmYRb39qSm0sl8fG2c_p9QfIe_F5iTqog.GIF/%EB%B9%84%EC%A0%9C%EC%96%B4_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8.gif?type=w3840" width="600px">
+<img src="/비제어 컴포넌트.gif" width="600px">
 </div>
 
 - **상태와의 독립성**
@@ -166,7 +166,7 @@ React에서 사용자 입력을 처리하는 방식은 제어 컴포넌트와 �
 <div align="center">
 
 <throttle 적용 예시>
-<img src="https://postfiles.pstatic.net/MjAyNDA5MDhfMyAg/MDAxNzI1Nzc5OTg0MTA0.XPO_pt7BKMByFyTDAXzy7dkIfUmkJG9z92mq_e5jlv8g.hZXIgnrxvGCcab6cQfd3HllSrAsNdCChsdKIH7AhLowg.GIF/%EC%8A%A4%EB%A1%9C%ED%8B%80.gif?type=w3840" width="600px">
+<img src="/스로틀.gif" width="600px">
 
 </div>
 
@@ -184,7 +184,7 @@ React에서 사용자 입력을 처리하는 방식은 제어 컴포넌트와 �
 <div align="center">
 
 <debounce 적용 예시>
-<img src="https://postfiles.pstatic.net/MjAyNDA5MDhfNTcg/MDAxNzI1Nzc5OTgzOTIx.2454iaZNV6WRJLcdPk2f6ckmJsCf0mZFWw86HCg7CiAg.71ID0sKythrNencbVpKeMrqlp4F2tEi184jpRAD1sX4g.GIF/%EB%94%94%EB%B0%94%EC%9A%B4%EC%8A%A4.gif?type=w3840" width="600px">
+<img src="디바운스.gif" width="600px">
 
 </div>
 
