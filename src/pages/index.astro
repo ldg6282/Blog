@@ -5,19 +5,43 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import Card from '../components/Card.jsx';
 import { getCollection } from 'astro:content';
 
-const posts = await getCollection('blog');
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const googleAnalyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
+		<!-- Google tag (gtag.js) -->
+		<script type="text/partytown" async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}></script>
+		<script type="text/partytown" define:vars={{ googleAnalyticsId }}>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', googleAnalyticsId);
+		</script>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
+			body {
+				background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%);
+				min-height: 100vh;
+			}
 			.card-container {
 				display: flex;
 				flex-wrap: wrap;
-				gap: 20px;
+				gap: 5px;
 				justify-content: center;
+			}
+			main {
+				padding: 20px;
+			}
+			h5 {
+				color: #333;
+				text-align: center;
 			}
 		</style>
 	</head>
