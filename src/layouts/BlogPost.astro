@@ -12,30 +12,31 @@ const { title, description, pubDate, updatedDate } = Astro.props;
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
+			body {
+				background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%);
+				min-height: 100vh;
 				margin: 0;
+				padding: 0;
 			}
-			.hero-image {
+			main {
 				width: 100%;
-			}
-			.hero-image img {
-				display: block;
+				max-width: 800px;
 				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
+				padding: 1em;
+				box-sizing: border-box;
 			}
 			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
+				width: 100%;
+				max-width: 720px;
 				margin: auto;
 				padding: 1em;
-				color: rgb(var(--gray-dark));
-				background-color: #f0f0f0;
-				border-radius: 8px;
-				box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+				color: #333;
+				background-color: rgba(255, 255, 255, 0.9);
+				border-radius: 12px;
+				box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+				box-sizing: border-box;
 			}
 			.title {
 				margin-bottom: 1em;
@@ -45,17 +46,36 @@ const { title, description, pubDate, updatedDate } = Astro.props;
 			}
 			.title h1 {
 				margin: 0 0 0.5em 0;
+				font-size: 2em;
+				color: #2c3e50;
 			}
 			.date {
 				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
+				color: #7f8c8d;
 			}
 			.last-updated-on {
 				font-style: italic;
+				color: #95a5a6;
 			}
 			.markdown-content {
-				font-size: 17px;
+				font-size: 16px;
 				line-height: 1.6;
+			}
+			hr {
+				border: 0;
+				border-top: 1px solid #dcedc1;
+				margin: 1em 0;
+			}
+			@media (max-width: 600px) {
+				.prose {
+					padding: 1em;
+				}
+				.title h1 {
+					font-size: 1.5em;
+				}
+				.markdown-content {
+					font-size: 14px;
+				}
 			}
 		</style>
 	</head>
@@ -63,25 +83,23 @@ const { title, description, pubDate, updatedDate } = Astro.props;
 	<body>
 		<Header />
 		<main>
-			<article>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h3>{title}</h3>
-						<hr />
+			<article class="prose">
+				<div class="title">
+					<div class="date">
+						<FormattedDate date={pubDate} />
+						{
+							updatedDate && (
+								<div class="last-updated-on">
+									Last updated on <FormattedDate date={updatedDate} />
+								</div>
+							)
+						}
 					</div>
-					<div class="markdown-content">
-						<slot />
-					</div>
+					<h1>{title}</h1>
+					<hr />
+				</div>
+				<div class="markdown-content">
+					<slot />
 				</div>
 			</article>
 		</main>
