@@ -8,30 +8,66 @@ const Card = ({ title, description, link, pubDate }) => {
       style={{
         display: "block",
         width: "100%",
-        border: "1px solid #ddd",
+        border: "1px solid #e0e0e0",
         borderRadius: "8px",
-        padding: "16px",
+        padding: "20px",
         textDecoration: "none",
         color: "inherit",
-        transition: "box-shadow 0.3s ease",
         backgroundColor: "white",
+        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
         position: "relative",
+        marginBottom: "20px",
+        boxSizing: "border-box",
       }}
     >
       <div
         style={{
-          position: "absolute",
-          top: "10px",
-          right: "10px",
-          fontSize: "14px",
-          color: "#666",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "flex-start",
+          marginBottom: "10px",
         }}
       >
-        {new Date(pubDate).toLocaleDateString()}
+        <h3
+          style={{
+            margin: "0",
+            color: "#333",
+            fontSize: "18px",
+            fontWeight: "bold",
+            flex: "1",
+          }}
+        >
+          {title}
+        </h3>
+        <div
+          style={{
+            fontSize: "14px",
+            color: "#666",
+            marginLeft: "10px",
+          }}
+        >
+          {new Date(pubDate).toLocaleDateString()}
+        </div>
       </div>
-      <div className="card-content">
-        <h5 style={{ marginTop: 0, marginRight: "60px" }}>{title}</h5>
-        <p style={{ fontSize: "15px" }}>{description}</p>
+      <p
+        style={{
+          fontSize: "14px",
+          color: "#666",
+          lineHeight: "1.5",
+          marginBottom: "15px",
+        }}
+      >
+        {description}
+      </p>
+      <div
+        style={{
+          textAlign: "right",
+          color: "#006e6d",
+          fontWeight: "bold",
+          fontSize: "14px",
+        }}
+      >
+        Read More →
       </div>
     </a>
   );
