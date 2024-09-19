@@ -184,7 +184,7 @@ React에서 사용자 입력을 처리하는 방식은 제어 컴포넌트와 �
 <div align="center">
 
 <debounce 적용 예시>
-<img src="디바운스.gif" width="600px">
+<img src="/디바운스.gif" width="600px">
 
 </div>
 
